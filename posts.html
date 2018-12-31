@@ -23,12 +23,12 @@ published: true
 		{% for post in site.posts %}
 			<article>
 				<h3>
-					<a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 				</h3>
 				<h6>
 					{{ post.date | date : "%d-%b-%Y" }} | {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
 				</h6>
-				<p>{% if post.excerpt %}{{ post.excerpt | strip_html }}{% else %}{{ post.content | truncatewords: 50 | strip_html }}{% endif %} <a href="{{ post.url | prepend: site.url }}" class="blog-read-more"><small>Read more</a></small></p>
+				<p>{% if post.excerpt %}{{ post.excerpt | strip_html }}{% else %}{{ post.content | truncatewords: 50 | strip_html }}{% endif %} <a href="{{ post.url | prepend: site.baseurl }}" class="blog-read-more"><small>Read more</a></small></p>
 			</article>
 		{% endfor %}
 	</div>
