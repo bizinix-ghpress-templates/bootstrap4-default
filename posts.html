@@ -1,0 +1,33 @@
+---
+title: "Posts"
+layout: "page"
+description: "Posts about the Bootstrap 3 Template for Bizinix GHPress"
+featured_image:
+    - file_name: "site-featured-image.jpg"
+      width: 1280
+      height: 683
+keywords:
+    - "github pages"
+    - "github pages cms"
+    - "github"
+    - "wordpress"
+    - "free website"
+    - "bizinix"
+	- "posts"
+	- "blog"
+published: true
+---
+
+<div class="row">
+	<div class="col-xs-12 col-md-8">
+		{% for post in site.posts %}
+			<article>
+				<h3><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></h3>
+				<h6>{{ post.date | date : "%d-%b-%Y" }} | {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}</h6>
+				<p>{% if post.excerpt %}{{ post.excerpt | strip_html }}{% else %}{{ post.content | truncatewords: 50 | strip_html }}{% endif %} <a href="{{ post.url | prepend: site.url }}" class="blog-read-more"><small>Read more</a></small></p>
+			</article>
+		{% endfor %}
+	</div>
+	<div class="col-xs-12 col-md-4">
+	</div>
+</div>
