@@ -26,7 +26,7 @@ published: true
 					<a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
 				</h3>
 				<h6>
-					{{ page.date | date : "%d-%b-%Y" }} | {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
+					{{ post.date | date : "%d-%b-%Y" }} | {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
 				</h6>
 				<p>{% if post.excerpt %}{{ post.excerpt | strip_html }}{% else %}{{ post.content | truncatewords: 50 | strip_html }}{% endif %} <a href="{{ post.url | prepend: site.url }}" class="blog-read-more"><small>Read more</a></small></p>
 			</article>
