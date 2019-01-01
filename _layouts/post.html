@@ -11,7 +11,7 @@
 	</div>
 	<div class="row">
 		<article class="col-xs-12 col-md-8">
-			{% if page.featured_image[0] %}<img src="{{ site.baseurl }}media/{{ page.featured_image[0].file_name }}" class="img-responsive" />{% endif %}
+			{% if page.featured_image[0] %}<img src="{{ site.baseurl }}/media/{{ page.featured_image[0].file_name }}" class="img-responsive" />{% endif %}
 			<h1>{{ page.title }}</h1>
 			<h6>
 				{{ page.date | date : "%d-%b-%Y" }} | {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
