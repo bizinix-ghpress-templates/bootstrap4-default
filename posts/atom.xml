@@ -1,0 +1,29 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog | {{ site.title }}</title>
+  <link href="{{ site.baseurl }}/posts"/>
+  <link type="application/atom+xml" rel="self" href="{{ site.baseurl }}/posts/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.baseurl }}/posts</id>
+  <author>
+    <name>{{ site.author }}</name>
+    <email>{{ site.baseurl }}/contact</email>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>{{ post.url | prepend: site.baseurl }}</id>
+    <link type="text/html" rel="alternate" href="{{ post.url | prepend: site.baseurl }}"/>
+    <title>{{ post.title  }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>{% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}</name>
+      <uri>{{ site.baseurl }}/contact</uri>
+    </author>
+    <content type="text">{% if post.excerpt %}{{ post.excerpt | strip_html }}{% else %}{{ post.content | truncatewords: 50 | strip_html }}{% endif %}</content>
+  </entry>
+  {% endfor %}
+</feed>
