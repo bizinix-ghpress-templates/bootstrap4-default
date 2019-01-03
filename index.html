@@ -27,3 +27,10 @@ published: true
 		<li style="color: rgb({{ r }},{{ g }},{{ b }});">rgb({{ r }},{{ g }},{{ b }})</li>
 	{% endfor %}
 </ul>
+
+<ol>
+	{% for i in (1..10) %}
+		{% assign c = 'now' | date: '%N' | modulo: 16777215 %}
+		<li style="color:{{ c }};">{{ c }}</li>
+	{% endfor %}
+</ol>
