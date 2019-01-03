@@ -21,7 +21,10 @@ published: true
 
 <ul>
 	{% for i in (1..10) %}
-	{% assign rgb = 'now' | date: '%N' | modulo: 16777215 | format: '%06x' %}
-		<li style="color: #{{ rgb }};">#{{ rgb }}</li>
+		{% assign r = 'now' | date: '%N' | modulo: 255 %}
+		{% assign g = 'now' | date: '%N' | modulo: 255 %}
+		{% assign b = 'now' | date: '%N' | modulo: 255 %}
+		{% assign rgb = 'rgb(' | append r | append ',' | append g | append ',' | append b | append ')' %}
+		<li style="color: {{ rgb }}">{{ rgb }}</li>
 	{% endfor %}
 </ul>
