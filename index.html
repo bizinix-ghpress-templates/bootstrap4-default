@@ -18,3 +18,10 @@ published: true
 
 <h3>for Bizinix GHPress</h3>
 <p>This is the default base template for Bizinix GHPress built on Bootstrap 3.</p>
+
+<ul>
+	{% for i in (1..10) %}
+	{% assign rgb = 'now' | date: '%N' | modulo: 16777215 | format: '%06x' %}
+		<li style="color: #{{ rgb }};">#{{ rgb }}</li>
+	{% endfor %}
+</ul>
