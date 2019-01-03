@@ -24,7 +24,6 @@ published: true
 		{% assign r = 'now' | date: '%N' | modulo: 255 %}
 		{% assign g = 'now' | date: '%N' | modulo: 255 %}
 		{% assign b = 'now' | date: '%N' | modulo: 255 %}
-		{% assign rgb = 'rgb(' | append r | append ',' | append g | append ',' | append b | append ')' %}
-		<li style="color: {{ rgb }}">{{ rgb }}</li>
+		<li style="color: rgb({{ r }},{{ g }},{{ b }});">rgb({{ r }},{{ g }},{{ b }})</li>
 	{% endfor %}
 </ul>
